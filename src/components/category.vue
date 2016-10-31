@@ -41,7 +41,10 @@
         data(){
             return{
               items: "",
-              filterKey: decodeURI(this.$route.params.categoryTitle)
+              update: "", //每次更新的数据
+              filterKey: decodeURI(this.$route.params.categoryTitle),
+              page: 1,
+              limit: 10
             }
         },
         vuex: {
@@ -116,20 +119,13 @@
         },
         created: function () {
           this.$http.get(
-            'http://localhost:3000/users/articles/1/2',
+            'http://localhost:3000/users/articles/1/' + this.limit,
             {},
             {}).then(function (response) {
             //成功回调
             if(response.ok) {
               console.log("获取数据成功");
               let key = this.filterKey;
-//              alert(key);   //undefined
-//              alert(typeof(key));  //String
-//              alert(key == undefined); //false
-//              alert(key === undefined); //false
-//              alert(key === 'undefined');
-//              alert(key == 'undefined');
-//              console.log(this.filterKey); //undefined
               if(key == null || key == "undefined") {
                 key = "";
               }
@@ -142,6 +138,44 @@
             Materialize.toast('初始化获取数据失败', 3000);
           })
         },
+        ready: function(){
+          var range = 50;             //距下边界长度/单位px
+          var maxnum = 20;            //设置加载最多次数
+          var num = 1;
+          var totalheight = 0;
+
+          $(window).scroll(()=>{
+            var srollPos = $(window).scrollTop();    //滚动条距顶部距离(页面超出窗口的高度)
+            totalheight = parseFloat($(window).height()) + parseFloat(srollPos);
+
+            if(($(document).height()-range) <= totalheight  && num != maxnum) {
+              //获取更新的数据
+              this.page = this.page + 1;
+              this.$http.get(
+                'http://localhost:3000/users/articles/' + this.page + '/' + this.limit,
+                {},
+                {}).then(function (response) {
+                //成功回调
+                if(response.ok) {
+                  console.log("获取数据成功");
+                  let key = this.filterKey;
+                  if(key == null || key == "undefined") {
+                    key = "";
+                  }
+                  this.update = response.data.body.filter(function (item) {
+                    return item.type.includes(key);
+                  });
+                  this.items = this.items.concat(this.update);
+                }
+              }, function (response) {
+                //回调失败
+                Materialize.toast('初始化获取数据失败', 3000);
+              });
+              //添加次数
+              num++;
+            }
+          });
+    },
         methods: {
           toTopic: function (title) {
               this.$router.go({name: 'topic', params: {title: title}});
