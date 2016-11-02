@@ -135,6 +135,9 @@
     }
   },
   created: function () {
+    if(this.loginName == "" || this.loginName == null) {
+      return;
+    }
     //监听聊天事件
     this.socket = io.connect('http://123.207.167.206:3000');
     let userName = this.loginName;
@@ -161,9 +164,6 @@
     });
 
     //获取用户状态
-    if(this.loginName == null || this.loginName == "") {
-      return;
-    }
     this.$http.get(
       'http://123.207.167.206:3000/users/accounts/'+ this.loginName,
       {},
@@ -206,6 +206,9 @@
     });
   },
   ready: function(){
+    if(this.loginName == "" || this.loginName == null) {
+      return;
+    }
     //获取聊天用户列表  eg: http://123.207.167.206:3000/users/chatrecord/list/admin
     this.$http.get(
       'http://123.207.167.206:3000/users/chatrecord/list/' + this.loginName,

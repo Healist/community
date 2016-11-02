@@ -15,11 +15,20 @@
 </template>
 
 <script>
+    import { actions } from '../store/store'
+
     export default{
         data(){
             return{
 
             }
+        },
+        vuex: {
+          actions: actions,
+          getters: {
+            loginName: ({ user }) => user.loginName,
+            lineStatus: ({ lineStatus }) => lineStatus
+          }
         },
         props: ['showEditor'],
         components:{
@@ -27,6 +36,10 @@
         },
         methods: {
           openEditor: function () {
+            if(this.loginName == "" || this.loginName == null) {
+              Materialize.toast('请你先登陆之后再操作', 3000);
+              return;
+            }
             this.showEditor = true;
           }
         }
