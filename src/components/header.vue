@@ -136,7 +136,7 @@
   },
   created: function () {
     //监听聊天事件
-    this.socket = io.connect('http://localhost:3000');
+    this.socket = io.connect('http://123.207.167.206:3000');
     let userName = this.loginName;
     this.socket.on('update:' + userName, (from, to, msg)=>{
       this.$http.get(

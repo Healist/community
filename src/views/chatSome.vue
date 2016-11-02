@@ -105,7 +105,7 @@
     created: function () {
       //根据用户名获取与该浏览好友的聊天内容
       //连接服务器
-      this.socket = io.connect('http://localhost:3000');
+      this.socket = io.connect('http://123.207.167.206:3000');
       let userName = this.loginName;
 
       this.socket.on('connected', function (connectTime) {

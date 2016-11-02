@@ -5,7 +5,7 @@
         <zd-crumbs></zd-crumbs>
 
         <div class="login-box">
-          <form action="localhost:3000/users/login" method="post">
+          <form action="http://123.207.167.206:3000/users/login" method="post">
             <div class="row">
               <div class="input-field col s12">
                 <input id="username" type="text" class="validate" name="username">
