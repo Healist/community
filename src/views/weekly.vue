@@ -50,7 +50,7 @@
     },
     created: function () {
       this.$http.get(
-        'http://localhost:3000/users/weekly',
+        'http://123.207.167.206:3000/users/weekly',
         {},
         {
           'headers': {
@@ -75,7 +75,7 @@
         this.$router.go({name: 'topic', params: {title: title}});
         //增加浏览量
         this.$http.get(
-          'http://localhost:3000/users/visitcount/add/' + title,
+          'http://123.207.167.206:3000/users/visitcount/add/' + title,
           {},
           {}
         ).then(function (response) {

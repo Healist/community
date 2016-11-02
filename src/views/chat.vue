@@ -44,7 +44,7 @@
         },
         created: function () {
           this.$http.get(
-            'http://localhost:3000/users/chatrecord/all/list/' + this.loginName,
+            'http://123.207.167.206:3000/users/chatrecord/all/list/' + this.loginName,
             {},
             {
               'headers': {

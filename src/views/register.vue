@@ -57,7 +57,7 @@
 
             //noinspection JSUnresolvedVariable
             this.$http.post(
-              'http://localhost:3000/users/register',
+              'http://123.207.167.206:3000/users/register',
               {
                 username: username,
                 password: password,

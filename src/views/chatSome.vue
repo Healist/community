@@ -118,7 +118,7 @@
       //监听需要更新自己的事件  用箭头函数解决this
       this.socket.on('update:' + userName, (from, to, msg)=>{
         this.$http.get(
-          'http://localhost:3000/users/chat/'+ this.loginName + '/' + this.accountName,
+          'http://123.207.167.206:3000/users/chat/'+ this.loginName + '/' + this.accountName,
           {},
           {}).then(function (response) {
           //成功回调
@@ -150,7 +150,7 @@
     ready: function () {
       //获取登陆用户的聊天内容
       this.$http.get(
-        'http://localhost:3000/users/chat/'+ this.loginName + '/' + this.accountName,
+        'http://123.207.167.206:3000/users/chat/'+ this.loginName + '/' + this.accountName,
         {},
         {}).then(function (response) {
         //成功回调

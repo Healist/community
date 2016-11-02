@@ -51,7 +51,7 @@
         },
       created: function () {
         this.$http.get(
-          'http://localhost:3000/users/tags',
+          'http://123.207.167.206:3000/users/tags',
           {},
           {
             'headers': {

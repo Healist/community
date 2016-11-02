@@ -43,7 +43,7 @@
         },
         created: function () {
           this.$http.get(
-            'http://localhost:3000/users/accounts/'+ this.accountName,
+            'http://123.207.167.206:3000/users/accounts/'+ this.accountName,
             {},
             {}).then(function (response) {
             //成功回调

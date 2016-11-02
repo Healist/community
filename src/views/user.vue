@@ -80,7 +80,7 @@
         },
         created: function () {
           this.$http.get(
-            'http://localhost:3000/users/accounts/'+ this.accountName,
+            'http://123.207.167.206:3000/users/accounts/'+ this.accountName,
             {},
             {}).then(function (response) {
             //成功回调
@@ -153,7 +153,7 @@
           },
           addFocus: function () {
             this.$http.post(
-              'http://localhost:3000/users/accounts/focus/' + this.loginName,
+              'http://123.207.167.206:3000/users/accounts/focus/' + this.loginName,
               {
                 contactName: this.accountName
               },

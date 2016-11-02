@@ -116,7 +116,7 @@
       created: function () {
         //判断是否已经关注过该用户
         this.$http.get(
-          'http://localhost:3000/users/hasfocus/' + this.loginName + '/' + this.accountName,
+          'http://123.207.167.206:3000/users/hasfocus/' + this.loginName + '/' + this.accountName,
           {},
           {}
         ).then(function (response) {
@@ -146,7 +146,7 @@
         //监听需要更新自己的事件  用箭头函数解决this
         this.socket.on('update:' + userName, (from, to, msg)=>{
           this.$http.get(
-            'http://localhost:3000/users/chat/'+ this.loginName + '/' + this.accountName,
+            'http://123.207.167.206:3000/users/chat/'+ this.loginName + '/' + this.accountName,
             {},
             {}).then(function (response) {
             //成功回调
@@ -178,7 +178,7 @@
       ready: function () {
         //获取登陆用户的聊天内容
         this.$http.get(
-          'http://localhost:3000/users/chat/'+ this.loginName + '/' + this.accountName,
+          'http://123.207.167.206:3000/users/chat/'+ this.loginName + '/' + this.accountName,
           {},
           {}).then(function (response) {
           //成功回调
@@ -225,7 +225,7 @@
         },
         addFocus() {
           this.$http.post(
-            'http://localhost:3000/users/accounts/focus/' + this.loginName,
+            'http://123.207.167.206:3000/users/accounts/focus/' + this.loginName,
             {
               contactName: this.accountName
             },
@@ -252,7 +252,7 @@
         },
         removeFocus() {
           this.$http.post(
-            'http://localhost:3000/users/cancelfocus/' + this.loginName,
+            'http://123.207.167.206:3000/users/cancelfocus/' + this.loginName,
             {
               contactName: this.accountName
             },

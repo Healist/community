@@ -84,7 +84,7 @@ export const actions = {
   setUserInfoBox: ({ dispatch }, value) => dispatch('SET_USER_INFO_BOX', value),
   setStatus: function (store, value) {
     this.$http.post(
-      'http://localhost:3000/users/linestatus',
+      'http://123.207.167.206:3000/users/linestatus',
       {
         username: store.state.user.loginName,
         linestatus: value

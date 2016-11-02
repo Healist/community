@@ -7,7 +7,7 @@
           <span class="close" @click="closeEditor"><a>X</a></span>
         </div>
         <div class="content-box">
-          <form action="http://localhost:3000/api/pubArticle" method="post">
+          <form action="http://123.207.167.206:3000/api/pubArticle" method="post">
             <!-- 标题 -->
             <div class="row">
               <h3 style="font-size: 1.4rem;">正在评论“{{ topicTitle }}”</h3>
@@ -33,7 +33,7 @@
           <span class="close" @click="closeEditor"><a>X</a></span>
         </div>
         <div class="content-box">
-          <form action="http://localhost:3000/api/pubArticle" method="post">
+          <form action="http://123.207.167.206:3000/api/pubArticle" method="post">
             <!-- 标题 -->
             <div class="row">
               <h3 style="font-size: 1.4rem;">正在回复@{{ toUsername }}</h3>
@@ -59,7 +59,7 @@
           <span class="close" @click="closeEditor"><a>X</a></span>
         </div>
         <div class="content-box">
-          <form action="http://localhost:3000/api/pubArticle" method="post">
+          <form action="http://123.207.167.206:3000/api/pubArticle" method="post">
             <!-- 标题 -->
             <div class="input-field row">
               <input id="article_title" type="text" class="validate" name="title">
@@ -138,7 +138,7 @@
           return;
         }
         this.$http.post(
-          'http://localhost:3000/users/pubArticle',
+          'http://123.207.167.206:3000/users/pubArticle',
           {
             title: article_title,
             content: article_content,
@@ -169,7 +169,7 @@
 
         //触发通知,通知粉丝本人发布了文章
         this.$http.post(
-          'http://localhost:3000/users/annotation',
+          'http://123.207.167.206:3000/users/annotation',
           {
             title: article_title,
             type: article_type,
@@ -201,7 +201,7 @@
         }
 
         this.$http.post(
-          'http://localhost:3000/users/topic/comment',
+          'http://123.207.167.206:3000/users/topic/comment',
           {
             title: this.topicTitle,
             content: comment_content,
@@ -228,7 +228,7 @@
 
         //触发通知,通知关注本片文章的用户
         this.$http.post(
-          'http://localhost:3000/users/focustopic/annotation',
+          'http://123.207.167.206:3000/users/focustopic/annotation',
           {
             title: this.topicTitle,
             type: this.topicType,
@@ -252,7 +252,7 @@
 
         //触发通知,通知粉丝本人评论了文章
         this.$http.post(
-          'http://localhost:3000/users/annotation',
+          'http://123.207.167.206:3000/users/annotation',
           {
             title: this.topicTitle,
             type: this.topicType,
@@ -283,7 +283,7 @@
         }
 
         this.$http.post(
-          'http://localhost:3000/users/topic/reply',
+          'http://123.207.167.206:3000/users/topic/reply',
           {
             title: this.topicTitle,
             content: comment_content,
@@ -311,7 +311,7 @@
 
         //触发通知,通知粉丝本人发布了文章
         this.$http.post(
-          'http://localhost:3000/users/annotation/reply',
+          'http://123.207.167.206:3000/users/annotation/reply',
           {
             title: this.topicTitle,
             loginName: this.loginName,

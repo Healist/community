@@ -31,7 +31,7 @@
         created: function () {
           //获取所有通知
           this.$http.get(
-            'http://localhost:3000/users/accounts/all/annotation/'+ this.loginName,
+            'http://123.207.167.206:3000/users/accounts/all/annotation/'+ this.loginName,
             {},
             {
               'headers': {

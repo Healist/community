@@ -140,7 +140,7 @@
     let userName = this.loginName;
     this.socket.on('update:' + userName, (from, to, msg)=>{
       this.$http.get(
-        'http://localhost:3000/users/chatrecord/list/' + this.loginName,
+        'http://123.207.167.206:3000/users/chatrecord/list/' + this.loginName,
         {},
         {
           'headers': {
@@ -165,7 +165,7 @@
       return;
     }
     this.$http.get(
-      'http://localhost:3000/users/accounts/'+ this.loginName,
+      'http://123.207.167.206:3000/users/accounts/'+ this.loginName,
       {},
       {
         'headers': {
@@ -187,7 +187,7 @@
 
     //获取未读的通知
     this.$http.get(
-      'http://localhost:3000/users/accounts/annotation/'+ this.loginName,
+      'http://123.207.167.206:3000/users/accounts/annotation/'+ this.loginName,
       {},
       {
         'headers': {
@@ -206,9 +206,9 @@
     });
   },
   ready: function(){
-    //获取聊天用户列表  eg: http://localhost:3000/users/chatrecord/list/admin
+    //获取聊天用户列表  eg: http://123.207.167.206:3000/users/chatrecord/list/admin
     this.$http.get(
-      'http://localhost:3000/users/chatrecord/list/' + this.loginName,
+      'http://123.207.167.206:3000/users/chatrecord/list/' + this.loginName,
       {},
       {
         'headers': {
@@ -298,7 +298,7 @@
     },
     browseAnnotation: function (id) {
       this.$http.post(
-        'http://localhost:3000/users/read/annotation',
+        'http://123.207.167.206:3000/users/read/annotation',
         {
           loginName: this.loginName,
           id: id
@@ -321,7 +321,7 @@
     },
     browseAllAnnotation: function () {
       this.$http.post(
-        'http://localhost:3000/users/read/all/annotation',
+        'http://123.207.167.206:3000/users/read/all/annotation',
         {
           loginName: this.loginName
         },
@@ -356,7 +356,7 @@
       }
 
       this.$http.post(
-        'http://localhost:3000/users/read/chat',
+        'http://123.207.167.206:3000/users/read/chat',
         {
           loginName: this.loginName,
           username: username //和谁聊天

@@ -132,7 +132,7 @@
             if(val == true) {
               //更新数据
               this.$http.get(
-                'http://localhost:3000/users/topic/'+ this.title,
+                'http://123.207.167.206:3000/users/topic/'+ this.title,
                 {},
                 {}).then(function (response) {
                 //成功回调
@@ -183,7 +183,7 @@
         },
         created: function () {
           this.$http.get(
-            'http://localhost:3000/users/topic/'+ this.title,
+            'http://123.207.167.206:3000/users/topic/'+ this.title,
             {},
             {}).then(function (response) {
             //成功回调
@@ -200,7 +200,7 @@
 
           //获取是否已经关注该文章
           this.$http.get(
-            'http://localhost:3000/users/topic/isFocus/'+ this.title + '/' + this.loginName,
+            'http://123.207.167.206:3000/users/topic/isFocus/'+ this.title + '/' + this.loginName,
             {},
             {}).then(function (response) {
             //成功回调
@@ -227,7 +227,7 @@
           },
           addFocusTopic: function (title) {
             this.$http.post(
-              'http://localhost:3000/users/accounts/topicfocus/' + this.loginName,
+              'http://123.207.167.206:3000/users/accounts/topicfocus/' + this.loginName,
               {
                 title: title
               },
@@ -251,7 +251,7 @@
           },
           removeTopicFocus(title) {
             this.$http.post(
-              'http://localhost:3000/users/canceltopicfocus',
+              'http://123.207.167.206:3000/users/canceltopicfocus',
               {
                 title: title,
                 loginName: this.loginName
