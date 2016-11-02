@@ -61,7 +61,7 @@
             if(val == true) {
               //更新数据
               this.$http.get(
-                'http://localhost:3000/users/articles/1/2',
+                'http://123.207.167.206:3000/users/articles/1/2',
                 {},
                 {}).then(function (response) {
                 //成功回调
@@ -119,7 +119,7 @@
         },
         created: function () {
           this.$http.get(
-            'http://localhost:3000/users/articles/1/' + this.limit,
+            'http://123.207.167.206:3000/users/articles/1/' + this.limit,
             {},
             {}).then(function (response) {
             //成功回调
@@ -152,7 +152,7 @@
               //获取更新的数据
               this.page = this.page + 1;
               this.$http.get(
-                'http://localhost:3000/users/articles/' + this.page + '/' + this.limit,
+                'http://123.207.167.206:3000/users/articles/' + this.page + '/' + this.limit,
                 {},
                 {}).then(function (response) {
                 //成功回调
@@ -181,7 +181,7 @@
               this.$router.go({name: 'topic', params: {title: title}});
             //增加浏览量
             this.$http.get(
-              'http://localhost:3000/users/visitcount/add/' + title,
+              'http://123.207.167.206:3000/users/visitcount/add/' + title,
               {},
               {}
             ).then(function (response) {
