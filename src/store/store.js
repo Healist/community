@@ -23,8 +23,6 @@ const store = new Vuex.Store({
     isUpdateTitle: false,
     //是否需要更新topic详情页
     isUpdateTopic: false,
-    // 当前选中的会话
-    currentSessionId: 1,
     // 过滤出只包含这个key的会话
     filterKey: ''
   },
@@ -32,10 +30,6 @@ const store = new Vuex.Store({
     INIT_DATA (state) {
 
     },
-    // 选择会话
-    SELECT_SESSION (state, id) {
-      state.currentSessionId = id;
-    } ,
     // 搜索
     SET_FILTER_KEY (state, value) {
       state.filterKey = value;
@@ -65,7 +59,6 @@ store.watch(
   (state) => state.sessions,
   (val) => {
     console.log('CHANGE: ', val);
-    localStorage.setItem('vue-chat-session', JSON.stringify(val));
   },
   {
     deep: true
@@ -75,7 +68,6 @@ store.watch(
 export default store;
 export const actions = {
   initData: ({ dispatch }) => dispatch('INIT_DATA'),
-  selectSession: ({ dispatch }, id) => dispatch('SELECT_SESSION', id),
   search: ({ dispatch }, value) => dispatch('SET_FILTER_KEY', value),
   setUpdateTitle: ({ dispatch }, value) => dispatch('SET_UPDATE_TITLE', value),
   setUpdateTopic: ({ dispatch }, value) => dispatch('SET_UPDATE_TOPIC', value),
