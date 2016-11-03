@@ -114,6 +114,9 @@
         }
       },
       created: function () {
+        if(this.loginName == null || this.loginName == "") {
+            return;
+          }
         //判断是否已经关注过该用户
         this.$http.get(
           'http://123.207.167.206:3000/users/hasfocus/' + this.loginName + '/' + this.accountName,
@@ -176,6 +179,9 @@
         }
       },
       ready: function () {
+        if(this.loginName == null || this.loginName == "") {
+            return;
+          }
         //获取登陆用户的聊天内容
         this.$http.get(
           'http://123.207.167.206:3000/users/chat/'+ this.loginName + '/' + this.accountName,
@@ -224,6 +230,10 @@
           this.userInfoBox = !this.userInfoBox;
         },
         addFocus() {
+          if(this.loginName == null || this.loginName == "") {
+            Materialize.toast('请先登陆', 3000);
+            return;
+          }
           this.$http.post(
             'http://123.207.167.206:3000/users/accounts/focus/' + this.loginName,
             {
@@ -278,6 +288,10 @@
           })
         },
         sendMessage () {
+          if(this.loginName == null || this.loginName == "") {
+            Materialize.toast('请先登陆', 3000);
+            return;
+          }
           let content = $('.chat-input').val();
           if(content!="") {
             this.socket.emit('private message', this.loginName, this.accountName, content);
