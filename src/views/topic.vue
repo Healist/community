@@ -16,7 +16,8 @@
 
         <div class="row light-blue lighten-4 card-box">
           <div class="col s1">
-              <img src="../assets/3.png" style="width:55px;height:55px;border-radius:50%;">
+              <!-- <img src="../assets/3.png" style="width:55px;height:55px;border-radius:50%;"> -->
+              <div class="user-icon2">{{ article.author_name | firstLetter }}</div>
           </div>
           <div class="col s11">
               <div class="row">
@@ -71,18 +72,19 @@
 
       <ul class="collection replays" v-show="isExist">
         <li class="collection-item avatar" v-for="item in comments">
-          <img src="../assets/3.png" alt="" class="circle">
-          <span class="title">
+          <!-- <img src="../assets/3.png" alt="" class="circle"> -->
+          <div class="user-icon">{{ item.username | firstLetter }}</div>
+          <span class="title lt">
             <strong>{{ item.username }}</strong>
             <a class="group-stage">{{ item.groupStage }}</a>
             <a>{{ item.added | createTime }}</a>
           </span>
-          <p>
+          <p class="lt">
             <span v-show="item.type==2" >@ {{ item.toUserName }} </span> &nbsp;
             {{ item.content }}
           </p>
-          <p>
-            <small class="right">
+          <p class="lt">
+            <small class="right2">
                 <span class="post-tools">
                   <a @click="makeReply(item.username)">回复</a>
                   <a>引用</a>
@@ -155,6 +157,12 @@
           }
         },
         filters: {
+            firstLetter(username) {
+              if(!username) {
+                return username;
+              }
+              return username.substr(0, 1);
+            },
             createTime(date) {
               if(!date) {
                 return;
@@ -361,5 +369,42 @@
     font-weight: 700;
     white-space: nowrap;
     border-left: none;
+  }
+  .user-icon {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    line-height: 62px;
+    font-size: 3rem;
+    display: inline-block;
+    text-align: center;
+    color: #eee;
+    font-weight: normal;
+    background-color: #f44336;
+    position: absolute;
+    left:15px;
+    vertical-align: middle;
+    overflow: hidden;
+  }
+  .user-icon2 {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    line-height: 62px;
+    font-size: 3rem;
+    display: inline-block;
+    text-align: center;
+    color: #eee;
+    font-weight: normal;
+    background-color: #f44336;
+    left:15px;
+    vertical-align: middle;
+    overflow: hidden;
+  }
+  .lt {
+    margin-left: 1rem !important;
+  }
+  .right2{
+    margin-left: 80%;
   }
 </style>

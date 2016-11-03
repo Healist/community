@@ -15,11 +15,25 @@
             </p>
           </div>
           <div class="col s1 num-box">
-            <span class="people-join-num num-bold" title="">2</span><br/>
+            <span class="people-join-num num-bold" title="" v-if="item.msg == '程序猿精英圈'">{{ programCount }}</span>
+            <span class="people-join-num num-bold" title="" v-if="item.msg == '互动讨论区'">{{ talkCount }}</span>
+            <span class="people-join-num num-bold" title="" v-if="item.msg == '问答专区'">{{ questionCount }}</span>
+            <span class="people-join-num num-bold" title="" v-if="item.msg == '大神私房菜BLOG'">{{ blogCount }}</span>
+            <span class="people-join-num num-bold" title="" v-if="item.msg == '招聘&求职专区'">{{ jobCount }}</span>
+            <span class="people-join-num num-bold" title="" v-if="item.msg == '干货,精华专区'">{{ creamCount }}</span>
+            <br/>
+
             <small class="num-label">帖子</small>
           </div>
           <div class="col s1 num-box">
-            <span class="people-read-num num-bold" title="">1.5K</span><br/>
+            <span class="people-read-num num-bold" title="" v-if="item.msg == '程序猿精英圈'">{{ programVisitCount }}</span>
+            <span class="people-read-num num-bold" title="" v-if="item.msg == '互动讨论区'">{{ talkVisitCount }}</span>
+            <span class="people-read-num num-bold" title="" v-if="item.msg == '问答专区'">{{ questionVisitCount }}</span>
+            <span class="people-read-num num-bold" title="" v-if="item.msg == '大神私房菜BLOG'">{{ blogVisitCount }}</span>
+            <span class="people-read-num num-bold" title="" v-if="item.msg == '招聘&求职专区'">{{ jobVisitCount }}</span>
+            <span class="people-read-num num-bold" title="" v-if="item.msg == '干货,精华专区'">{{ creamVisitCount }}</span>
+            <br/>
+
             <small class="num-label">浏览</small>
           </div>
           <a href="#!" class="secondary-content"><i class="mdi-action-grade"></i></a>
@@ -43,8 +57,57 @@
                 {msg:'大神私房菜BLOG',word:'亲们,欢迎撰写博文~~~',url: 'http://localhost:3030/static/img/article.png'},
                 {msg:'招聘&求职专区',word:'大学生求职,招聘等请发在这里',url: 'http://localhost:3030/static/img/card.png'},
                 {msg:'干货,精华专区',word:'干货精华贴',url: 'http://localhost:3030/static/img/zan.png'}
-              ]
+              ],
+              programCount: 0,
+              programVisitCount: 0,
+              talkCount: 0,
+              talkVisitCount: 0,
+              questionCount: 0,
+              questionVisitCount:0,
+              blogCount: 0,
+              blogVisitCount: 0,
+              jobCount: 0,
+              jobVisitCount: 0,
+              creamCount: 0,
+              creamVisitCount: 0,
+              result: ""
             }
+        },
+        created: function () {
+          this.$http.get(
+            'http://localhost:3000/users/category',
+            {},
+            {}
+          ).then(function (response) {
+            if(response.ok) {
+              this.result = response.data.message;
+              this.result.forEach(function (item) {
+                if(item.category == "程序猿精英圈") {
+                  this.programCount = item.counts;
+                  this.programVisitCount = item.visit_count;
+                } else if (item.category == "互动讨论区") {
+                  this.talkCount = item.counts;
+                  this.talkVisitCount = item.visit_count;
+                } else if (item.category == "问答专区") {
+                  this.questionCount = item.counts;
+                  this.questionVisitCount = item.visit_count;
+                } else if (item.category == "大神私房菜BLOG") {
+                  this.blogCount = item.counts;
+                  this.blogVisitCount = item.visit_count;
+                } else if (item.category == "招聘&求职专区") {
+                  this.jobCount = item.counts;
+                  this.jobVisitCount = item.visit_count;
+                } else if (item.category == "干货,精华专区") {
+                  this.creamCount = item.counts;
+                  this.creamVisitCount = item.visit_count;
+                }
+              });
+            } else {
+              console.log("获取category失败");
+            }
+          }, function (response) {
+            console.log("获取category失败");
+          });
         },
         components:{
           "nvHeader":require('../components/header.vue'),
