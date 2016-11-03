@@ -5,7 +5,6 @@
       <zd-crumbs></zd-crumbs>
 
       <div class="register-box">
-        <form>
           <div class="row">
             <div class="input-field col s12">
               <input id="username" type="text" class="validate" name="username">
@@ -28,7 +27,6 @@
           <button class="btn waves-effect waves-light blue darken-2" name="action" @click="submit">注册
             <i class="material-icons dp48 right">input</i>
           </button>
-        </form>
       </div>
 
       <zd-rooter></zd-rooter>
