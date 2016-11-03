@@ -5,7 +5,7 @@
       <zd-crumbs></zd-crumbs>
 
       <div class="register-box">
-        <form method="post">
+        <form>
           <div class="row">
             <div class="input-field col s12">
               <input id="username" type="text" class="validate" name="username">
