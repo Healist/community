@@ -70,13 +70,17 @@
                 emulateJSON: true,
                 crossOrigin: true
               }).then(function (response) {
-                var isSuccess = response.ok;
-                if(isSuccess) {
-                  localStorage.setItem("loginName", username);
-                  this.$router.go({name: 'user',params: {loginName: username}});
-                  location.reload();
+                if(response.ok) {
+                  if(response.data.msg == "exist") {
+                    Materialize.toast('用户名已存在', 3000);
+                    return;
+                  } else {
+                    localStorage.setItem("loginName", username);
+                    this.$router.go({name: 'user',params: {loginName: username}});
+                    location.reload();
+                  }
                 } else {
-                  alert("注册失败了，请重试");
+                  Materialize.toast('注册失败了，请重试', 3000);
                 }
             });
           }
