@@ -5,7 +5,7 @@
       <zd-crumbs></zd-crumbs>
 
       <div class="register-box">
-        <form action="http://123.207.167.206:3000/users/register" method="post">
+        <form method="post">
           <div class="row">
             <div class="input-field col s12">
               <input id="username" type="text" class="validate" name="username">
@@ -25,7 +25,7 @@
             </div>
           </div>
 
-          <button class="btn waves-effect waves-light blue darken-2" type="submit" name="action" @click="submit">注册
+          <button class="btn waves-effect waves-light blue darken-2" name="action" @click="submit">注册
             <i class="material-icons dp48 right">input</i>
           </button>
         </form>
