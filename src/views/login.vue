@@ -5,24 +5,22 @@
         <zd-crumbs></zd-crumbs>
 
         <div class="login-box">
-          <form action="http://123.207.167.206:3000/users/login" method="post">
-            <div class="row">
-              <div class="input-field col s12">
-                <input id="username" type="text" class="validate" name="username">
-                <label for="username">用户名</label>
-              </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="username" type="text" class="validate" name="username">
+              <label for="username">用户名</label>
             </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <input id="password" type="password" class="validate">
-                <label for="password">密码</label>
-              </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="password" type="password" class="validate">
+              <label for="password">密码</label>
             </div>
+          </div>
 
-            <button class="btn waves-effect waves-light blue darken-2" type="submit" name="action" @click="submit">登陆
-              <i class="material-icons dp48 right">input</i>
-            </button>
-          </form>
+          <button class="btn waves-effect waves-light blue darken-2" type="submit" name="action" @click="submit">登陆
+            <i class="material-icons dp48 right">input</i>
+          </button>
         </div>
 
         <zd-rooter></zd-rooter>
