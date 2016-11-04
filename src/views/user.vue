@@ -78,7 +78,7 @@
             Materialize.toast('changed! box!', 3000);
           }
         },
-        created: function () {
+        ready: function () {
           this.$http.get(
             'http://123.207.167.206:3000/users/accounts/'+ this.accountName,
             {},
