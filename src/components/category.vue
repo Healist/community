@@ -61,7 +61,7 @@
             if(val == true) {
               //更新数据
               this.$http.get(
-                'http://123.207.167.206:3000/users/articles/1/2',
+                'http://123.207.167.206:3000/users/articles/1/' + this.limit,
                 {},
                 {}).then(function (response) {
                 //成功回调
