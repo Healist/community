@@ -81,7 +81,7 @@
           ).then(function (response) {
             if(response.ok) {
               this.result = response.data.message;
-              this.result.forEach(function (item) {
+              this.result.forEach((item) => {
                 if(item.category == "程序猿精英圈") {
                   this.programCount = item.counts;
                   this.programVisitCount = item.visit_count;
