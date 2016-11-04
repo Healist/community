@@ -14,7 +14,7 @@
             </div>
             <!-- 文本域 -->
             <div class="input-field row">
-              <textarea id="comment_content" class="materialize-textarea" name="content" style="overflow-y:auto;max-height:200px;"></textarea>
+              <textarea id="comment_content" class="materialize-textarea area" name="content" style="overflow-y:auto;max-height:200px;"></textarea>
               <label for="comment_content">评论内容</label>
             </div>
 
@@ -40,7 +40,7 @@
             </div>
             <!-- 文本域 -->
             <div class="input-field row">
-              <textarea id="reply_content" class="materialize-textarea" name="content" style="overflow-y:auto;max-height:200px;"></textarea>
+              <textarea id="reply_content" class="materialize-textarea area" name="content" style="overflow-y:auto;max-height:200px;"></textarea>
               <label for="reply_content">回复内容</label>
             </div>
 
@@ -67,7 +67,7 @@
             </div>
             <!-- 文本域 -->
             <div class="input-field row">
-              <textarea id="article_content" class="materialize-textarea" name="content" style="overflow-y:auto;max-height:200px;"></textarea>
+              <textarea id="article_content" class="materialize-textarea area" name="content" style="overflow-y:auto;max-height:200px;"></textarea>
               <label for="article_content">文章内容</label>
             </div>
             <!-- 标签 -->
@@ -392,6 +392,11 @@
   }
   .pub {
     margin:1rem;
+  }
+  .area {
+    overflow-y: auto;
+    max-height: 100px !important;
+    height: 90px !important;
   }
 </style>
 
