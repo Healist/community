@@ -51,12 +51,12 @@
         data(){
             return{
               items:[
-                {msg:'程序猿精英圈',word:'本圈子立志于成为码农精英聚集地,分享干货,共享知识,互相提升水平,探讨技术的乐园',url: 'http://123.207.167.206:3030/static/img/speaker2.png'},
-                {msg:'互动讨论区',word:'畅所欲言,说你所想,no can,no bb!you can,you up!',url: 'http://123.207.167.206:3030/static/img/wechat.png'},
-                {msg:'问答专区',word:'每一个大神都是从菜鸟,一个坑一个坑踩过之后,才NB的,带你装B,带你飞!!',url: 'http://123.207.167.206:3030/static/img/question.png'},
-                {msg:'大神私房菜BLOG',word:'亲们,欢迎撰写博文~~~',url: 'http://123.207.167.206:3030/static/img/article.png'},
-                {msg:'招聘&求职专区',word:'大学生求职,招聘等请发在这里',url: 'http://123.207.167.206:3030/static/img/card.png'},
-                {msg:'干货,精华专区',word:'干货精华贴',url: 'http://123.207.167.206:3030/static/img/zan.png'}
+                {msg:'程序猿精英圈',word:'本圈子立志于成为码农精英聚集地,分享干货,共享知识,互相提升水平,探讨技术的乐园',url: 'http://localhost:3030/static/img/speaker2.png'},
+                {msg:'互动讨论区',word:'畅所欲言,说你所想,no can,no bb!you can,you up!',url: 'http://localhost:3030/static/img/wechat.png'},
+                {msg:'问答专区',word:'每一个大神都是从菜鸟,一个坑一个坑踩过之后,才NB的,带你装B,带你飞!!',url: 'http://localhost:3030/static/img/question.png'},
+                {msg:'大神私房菜BLOG',word:'亲们,欢迎撰写博文~~~',url: 'http://localhost:3030/static/img/article.png'},
+                {msg:'招聘&求职专区',word:'大学生求职,招聘等请发在这里',url: 'http://localhost:3030/static/img/card.png'},
+                {msg:'干货,精华专区',word:'干货精华贴',url: 'http://localhost:3030/static/img/zan.png'}
               ],
               programCount: 0,
               programVisitCount: 0,
