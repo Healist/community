@@ -1,27 +1,19 @@
-# community
+# 吹乎
 
-> A Vue.js project
+------
 
-## Build Setup
+前端我用的是vue1.0来写的，基于组件化开发的单页面应用。技术栈有以下：
 
-``` bash
-# install dependencies
-npm install
+> * vue1.0
+> * vuex
+> * vue-resource
+> * vue-router
+> * socketio
 
-# serve with hot reload at localhost:8080
-npm run dev
+这里想说一下socketio这个框架，该网站的实时聊天和通知功能就是基于socketio来写的，这个库基于websocket协议，用它可以来实现前端与服务器互相通信，原理就是基于事件的订阅通知，初次尝试，感觉很棒！
 
-# build for production with minification
-npm run build
+很多细节还待完善。。。
 
-# run unit tests
-npm run unit
 
-# run e2e tests
-npm run e2e
+[线上体验](http://123.207.167.206/)
 
-# run all tests
-npm test
-```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
