@@ -206,6 +206,10 @@
             this.isExist = false;
           });
 
+          if(!this.loginName) {
+            return;
+          }
+
           //获取是否已经关注该文章
           this.$http.get(
             'http://123.207.167.206:3000/users/topic/isFocus/'+ this.title + '/' + this.loginName,
@@ -223,17 +227,29 @@
         },
         methods: {
           makeComment: function () {
+            if(!this.loginName) {
+              Materialize.toast('请先登陆', 2000);
+              return;
+            }
             this.showEditor = true;
             this.isComment = true;
             this.isReply = false;
           },
           makeReply: function (username) {
+            if(!this.loginName) {
+              Materialize.toast('请先登陆', 2000);
+              return;
+            }
             this.showEditor = true;
             this.isReply = true;
             this.isComment = false;
             this.toUsername = username;
           },
           addFocusTopic: function (title) {
+            if(!this.loginName) {
+              Materialize.toast('请先登陆', 2000);
+              return;
+            }
             this.$http.post(
               'http://123.207.167.206:3000/users/accounts/topicfocus/' + this.loginName,
               {
@@ -258,6 +274,10 @@
             });
           },
           removeTopicFocus(title) {
+            if(!this.loginName) {
+              Materialize.toast('请先登陆', 2000);
+              return;
+            }
             this.$http.post(
               'http://123.207.167.206:3000/users/canceltopicfocus',
               {
