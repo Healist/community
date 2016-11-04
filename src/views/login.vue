@@ -55,6 +55,11 @@
           let username = $('#username').val();
           let password = $('#password').val();
 
+          if(username == "" || password == "") {
+            Materialize.toast('表单有空值，请重试', 3000);
+            return;
+          }
+
           //noinspection JSUnresolvedVariable
           this.$http.post(
             'http://123.207.167.206:3000/users/login',
